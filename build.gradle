@@ -1,0 +1,23 @@
+plugins { id 'java' }
+repositories {
+    mavenLocal()
+    maven { url = 'https://repo.runelite.net' }
+    mavenCentral()
+}
+group = 'com.afktimers'
+version = '0.1.0'
+dependencies {
+    compileOnly 'net.runelite:client:1.13.3'
+    testImplementation 'net.runelite:client:1.13.3'
+    testImplementation 'junit:junit:4.12'
+}
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release.set(11)
+}
+tasks.register('run', JavaExec) {
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.afktimers.AfkTimersLauncher'
+    jvmArgs '-ea'
+    args '--developer-mode'
+}
