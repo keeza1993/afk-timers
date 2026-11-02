@@ -4,7 +4,8 @@ import java.awt.image.BufferedImage;
 import java.util.Arrays;
 import javax.inject.Inject;
 import net.runelite.api.*;
-import net.runelite.api.widgets.*;
+import net.runelite.api.widgets.Widget;
+import net.runelite.api.gameval.InterfaceID;
 import net.runelite.client.game.ItemManager;
 import net.runelite.client.ui.overlay.*;
 
@@ -34,7 +35,7 @@ public class AfkTimersOverlay extends Overlay {
   int w=config.width(),h=config.height(),total=bars.size()*(h+3)-3;
   boolean reset=getPreferredLocation()==null;
   if(reset){
-   Widget inv=client.getWidget(WidgetInfo.INVENTORY);
+   Widget inv=client.getWidget(InterfaceID.Inventory.ITEMS);
    if(inv!=null && !inv.isHidden()){
     Rectangle bounds=inv.getBounds();
     setPreferredLocation(new java.awt.Point(Math.max(0,Math.min(client.getCanvasWidth()-w,bounds.x)),Math.max(0,bounds.y-total-8)));
