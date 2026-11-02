@@ -91,7 +91,41 @@ public class AfkTimersPlugin extends Plugin {
   bars=Collections.unmodifiableList(next);
  }
  private String title(String s){return s.substring(0,1).toUpperCase(Locale.ROOT)+s.substring(1).toLowerCase(Locale.ROOT);}
- private boolean enabled(String key){try{return (boolean)AfkTimersConfig.class.getMethod(key).invoke(config);}catch(ReflectiveOperationException ex){return false;}}
+ boolean enabled(String key){
+  switch(key){
+   case "skillAttack": return config.skillAttack();
+   case "skillStrength": return config.skillStrength();
+   case "skillDefence": return config.skillDefence();
+   case "skillRanged": return config.skillRanged();
+   case "skillMagic": return config.skillMagic();
+   case "skillCooking": return config.skillCooking();
+   case "skillWoodcutting": return config.skillWoodcutting();
+   case "skillFletching": return config.skillFletching();
+   case "skillFishing": return config.skillFishing();
+   case "skillFiremaking": return config.skillFiremaking();
+   case "skillCrafting": return config.skillCrafting();
+   case "skillSmithing": return config.skillSmithing();
+   case "skillMining": return config.skillMining();
+   case "skillHerblore": return config.skillHerblore();
+   case "skillAgility": return config.skillAgility();
+   case "skillThieving": return config.skillThieving();
+   case "skillSlayer": return config.skillSlayer();
+   case "skillFarming": return config.skillFarming();
+   case "skillRunecraft": return config.skillRunecraft();
+   case "skillHunter": return config.skillHunter();
+   case "skillConstruction": return config.skillConstruction();
+   case "skillSailing": return config.skillSailing();
+   case "divineAttack": return config.divineAttack();
+   case "divineStrength": return config.divineStrength();
+   case "divineDefence": return config.divineDefence();
+   case "divineRanged": return config.divineRanged();
+   case "divineMagic": return config.divineMagic();
+   case "divineCombat": return config.divineCombat();
+   case "divineBastion": return config.divineBastion();
+   case "divineBattlemage": return config.divineBattlemage();
+   default: return false;
+  }
+ }
  private boolean divineActive(Skill s){
   int specific=s==Skill.ATTACK?8429:s==Skill.STRENGTH?8430:s==Skill.DEFENCE?8431:s==Skill.RANGED?8432:s==Skill.MAGIC?8433:0;
   if(specific!=0 && client.getVarbitValue(specific)>0)return true;
