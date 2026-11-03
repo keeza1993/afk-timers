@@ -32,7 +32,7 @@ final class WelcomeDialog {
         panel.setBorder(BorderFactory.createEmptyBorder(22, 24, 20, 24));
         JLabel text = new JLabel("<html><body style='width:370px;color:#eeeeee;font-family:sans-serif'>"
             + "<h1 style='color:#57d6dc;margin-top:0'>AFK Timers</h1>"
-            + "<p><b>Created by Th3keeza0</b></p><br>"
+            + "<p><b>Created by imth3keeza0</b></p><br>"
             + "<p>Keep track of your potion effects, prayer and heart cooldown with clear, coloured bars. "
             + "Bars flash when less than 10% remains; the prayer warning uses your remaining prayer points.</p><br>"
             + "<h3>Make it your own</h3>"

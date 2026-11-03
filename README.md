@@ -2,7 +2,7 @@
 
 ![AFK Timers logo](docs/images/afk-timers-logo.png)
 
-RuneLite plugin created by **Th3keeza0**, from **OSRS geezers**. Translucent coloured timer bars above the inventory, with individual effect switches and low-duration flashing.
+RuneLite plugin created by **imth3keeza0**, from **OSRS geezers**. Translucent coloured timer bars above the inventory, with individual effect switches and low-duration flashing.
 
 ## Open and run
 
